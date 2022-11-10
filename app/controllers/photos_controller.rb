@@ -21,6 +21,16 @@ class PhotosController < ApplicationController
   end
 
   def delete
-    render({ :template => "photo_templates/delete.html.erb" })
+    the_id = params.fetch("path_id")
+
+    matching_photos = Photo.where({ :id => the_id })
+
+    the_photo = matching_photos.first
+
+    the_photo.destroy
+
+    # render({ :template => "photo_templates/delete.html.erb" })
+
+    redirect_to("/photos")
   end
 end
