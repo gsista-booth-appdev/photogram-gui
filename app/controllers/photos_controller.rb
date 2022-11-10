@@ -19,4 +19,8 @@ class PhotosController < ApplicationController
 
     render({ :template => "photo_templates/show.html.erb" })
   end
+
+  def delete
+    render({ :template => "photo_templates/delete.html.erb" })
+  end
 end
