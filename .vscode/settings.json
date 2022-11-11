@@ -44,4 +44,6 @@
   "emmet.includeLanguages": {
     "erb": "html"
   },
+  "workbench.preferredDarkColorTheme": "Visual Studio Light",
+  "workbench.preferredHighContrastColorTheme": "Default Light+",
 }
