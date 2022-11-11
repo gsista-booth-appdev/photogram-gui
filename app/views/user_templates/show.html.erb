@@ -8,7 +8,12 @@
   <dt>Edit User</dt>
 
   <dd>
-  
+    <form action="/update_username/<%= @the_user.username %>">
+      <label for="username">Image</label>
+      <input id="username" type="text" name="query_username" value="<%= @the_user.username %>">
+
+      <button>Update user</button>
+    </form>
   </dd>
 
 </dl>

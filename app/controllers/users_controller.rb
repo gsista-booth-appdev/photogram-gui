@@ -35,4 +35,24 @@ class UsersController < ApplicationController
 
     #render({ :template => "user_templates/create.html.erb" })
   end
+
+  def update
+    the_username = params.fetch("path_username")
+
+    matching_usernames = User.where({ :username => the_username })
+
+    the_username = matching_usernames.first
+
+    input_username = params.fetch("query_username")
+
+    the_username.username = input_username
+
+    the_username.save
+
+    # render({ :template => "user_templates/update.html.erb" })
+
+    next_url = "/users/" + the_username.username.to_s
+
+    redirect_to(next_url)
+  end
 end
